@@ -27,6 +27,36 @@ function calcularCombustivel(e){
 }
 
 
+let deferredPrompt;
+
+window.addEventListener('beforeinstallprompt', (e) => {
+
+    e.preventDefault();
+
+    deferredPrompt = e;
+
+    document.getElementById('instalar-app').style.display = 'block';
+
+});
+
+document.getElementById('btnInstalar').addEventListener('click', async () => {
+
+    if (!deferredPrompt) return;
+
+    deferredPrompt.prompt();
+
+    const escolha = await deferredPrompt.userChoice;
+
+    if (escolha.outcome === 'accepted') {
+        console.log('App instalado');
+    }
+
+    deferredPrompt = null;
+
+    document.getElementById('instalar-app').style.display = 'none';
+
+});
+
 
 if ("serviceWorker" in navigator) {
     window.addEventListener("load", () => {

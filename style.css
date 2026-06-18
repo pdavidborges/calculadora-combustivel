@@ -95,3 +95,13 @@ body{
     font-weight: bold;
     color: red;
 }
+
+#instalar-app{
+    margin-top:20px;
+    text-align:center;
+}
+
+#instalar-app p{
+    margin-bottom:10px;
+    color:#333;
+}
