@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#6889A6">    
+    <meta name="theme-color" content="#6889A6">
     <title>Calculadora de Combustível</title>
-    
+
     <link rel="manifest" href="manifest.json">
     <!-- ligação entre HTML e CSS -->
     <link rel="stylesheet" href="style.css">
@@ -17,7 +17,7 @@
     <div class="principal">
 
         <div class="topo">
-            <img src="capa.webp">   
+            <img src="capa.webp">
         </div>
 
         <div class="conteudo">
@@ -37,9 +37,19 @@
 
                 <button type="submit">Calcular</button>
             </form>
-            
+
             <div id="resposta">
-                <!--LOCAL DA RESPOSTA DO SCRIPT-->    
+                <!--LOCAL DA RESPOSTA DO SCRIPT-->
+            </div>
+
+            <div id="instalar-app">
+
+                <p>Deseja instalar este APP?</p>
+
+                <button id="btnInstalar">
+                    Instalar Aplicativo
+                </button>
+
             </div>
         </div>
 
@@ -50,13 +60,11 @@
     </div>
 
 
-    <div id="instalar-app" style="display:none; text-align:center; margin-top:20px;">
-        <p>Deseja instalar este APP?</p>
-        <button id="btnInstalar">Instalar App</button>
-    </div>
-    
+
+
     <!-- Ligação entre HTML e JS -->
     <script src="script.js"></script>
-    
+
 </body>
+
 </html>

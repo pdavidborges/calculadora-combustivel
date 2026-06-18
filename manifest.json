@@ -1,8 +1,10 @@
 {
+    "id": "/calculadora-combustivel/",
     "name": "Economiza Aê",
     "short_name": "Economiza Aê",
     "description": "Calculadora de combustível para descobrir a melhor opção entre gasolina e etanol.",
-    "start_url": "./",
+    "start_url": "/calculadora-combustivel/",
+    "scope": "/calculadora-combustivel/",
     "display": "standalone",
     "background_color": "#465973",
     "theme_color": "#6889A6",
@@ -11,7 +13,8 @@
         {
             "src": "icon.webp",
             "sizes": "1024x1024",
-            "type": "image/webp"
+            "type": "image/webp",
+            "purpose": "any"
         }
     ]
 }

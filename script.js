@@ -26,20 +26,47 @@ function calcularCombustivel(e){
 
 }
 
+if ("serviceWorker" in navigator) {
+
+    window.addEventListener("load", () => {
+
+        navigator.serviceWorker.register("./sw.js")
+            .then(() => {
+
+                console.log("Service Worker registrado");
+
+            })
+            .catch(err => {
+
+                console.error(err);
+
+            });
+
+    });
+
+}
+
+
+// ----------------------------
+// INSTALAÇÃO DO PWA
+// ----------------------------
 
 let deferredPrompt;
 
-window.addEventListener('beforeinstallprompt', (e) => {
+window.addEventListener("beforeinstallprompt", (e) => {
+
+    console.log("PWA INSTALÁVEL");
 
     e.preventDefault();
 
     deferredPrompt = e;
 
-    document.getElementById('instalar-app').style.display = 'block';
+    document.getElementById("instalar-app").style.display = "block";
 
 });
 
-document.getElementById('btnInstalar').addEventListener('click', async () => {
+
+document.getElementById("btnInstalar").addEventListener("click", async () => {
 
     if (!deferredPrompt) return;
 
@@ -47,25 +74,25 @@ document.getElementById('btnInstalar').addEventListener('click', async () => {
 
     const escolha = await deferredPrompt.userChoice;
 
-    if (escolha.outcome === 'accepted') {
-        console.log('App instalado');
+    if (escolha.outcome === "accepted") {
+
+        console.log("Instalado");
+
     }
 
     deferredPrompt = null;
 
-    document.getElementById('instalar-app').style.display = 'none';
+    document.getElementById("instalar-app").style.display = "none";
 
 });
 
 
-if ("serviceWorker" in navigator) {
-    window.addEventListener("load", () => {
-        navigator.serviceWorker.register("sw.js")
-            .then(() => {
-                console.log("Service Worker registrado");
-            })
-            .catch(error => {
-                console.error("Erro ao registrar SW:", error);
-            });
-    });
-}
+// ESCONDER APÓS INSTALAÇÃO
+
+window.addEventListener("appinstalled", () => {
+
+    document.getElementById("instalar-app").style.display = "none";
+
+    console.log("Aplicativo instalado");
+
+});

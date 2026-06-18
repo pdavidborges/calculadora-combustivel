@@ -97,6 +97,7 @@ body{
 }
 
 #instalar-app{
+    display:none;
     margin-top:20px;
     text-align:center;
 }
@@ -104,4 +105,8 @@ body{
 #instalar-app p{
     margin-bottom:10px;
     color:#333;
+}
+
+#btnInstalar{
+    background-color:#2A3F59;
 }
