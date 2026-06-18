@@ -23,6 +23,19 @@ function calcularCombustivel(e){
         //alert('Abasteça com Gasolina');
         resposta.innerHTML = 'Abasteça com Gasolina';
     }
-        
+
 }
 
+
+
+if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+        navigator.serviceWorker.register("sw.js")
+            .then(() => {
+                console.log("Service Worker registrado");
+            })
+            .catch(error => {
+                console.error("Erro ao registrar SW:", error);
+            });
+    });
+}
