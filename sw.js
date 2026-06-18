@@ -1,4 +1,4 @@
-const CACHE_NAME = "economiza-ae-v1";
+const CACHE_NAME = "economiza-ae-v2";
 
 const arquivos = [
     "./",
