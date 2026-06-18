@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Combustível</title>
+
+    <!-- ligação entre HTML e CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="principal">
+
+        <div class="topo">
+            <img src="capa.webp">   
+        </div>
+
+        <div class="conteudo">
+            <h1 id="titulo">Qual combustível é melhor?</h1>
+            <p>Preencha os campos e veja qual é o mais vantajoso.</p>
+
+            <form onsubmit="calcularCombustivel(event)">
+                <label>
+                    Valor do litro da gasolina<br>
+                    <input id="gasolina" type="number" required step="0.01" placeholder="Ex: 6.20"><br>
+                </label>
+
+                <label>
+                    Valor do litro do etanol<br>
+                    <input id="etanol" type="number" required step="0.01" placeholder="Ex: 4.89"><br>
+                </label>
+
+                <button type="submit">Calcular</button>
+            </form>
+            
+            <div id="resposta">
+                <!--LOCAL DA RESPOSTA DO SCRIPT-->    
+            </div>
+        </div>
+
+        <div class="rodape">
+            <p>Desenvolvido por: Coti Informática</p>
+        </div>
+
+    </div>
+    
+    <!-- Ligação entre HTML e JS -->
+    <script src="script.js"></script>
+    
+</body>
+</html>

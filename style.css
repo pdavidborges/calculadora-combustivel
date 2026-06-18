@@ -1,0 +1,97 @@
+/*
+seletor{
+    propriedade:valor;    
+}
+*/
+
+/*Retirando as margens(espaços externos) e paddings(espaços internos) de todos os elementos do HTML*/
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: #465973;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.principal{
+    width: 100%; /*largura*/
+    max-width: 600px; /*largura máxima*/
+    
+    background-color: #ffffff;
+    height: auto; /*altura*/
+
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+}
+
+/*Selecionando a imagem que está dentro do .topo*/
+.topo img{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.conteudo{
+    padding: 24px;
+}
+
+.conteudo h1{
+    font-size: 24px;
+    color: #333333;
+}
+
+.conteudo p{
+    font-size: 14px;
+    color: #666666;
+}   
+
+.conteudo form{
+    margin-top: 30px;    
+}
+
+.conteudo label{
+    font-size: 14px;
+    color: #666666;
+}
+
+.conteudo input{
+    margin-bottom: 10px;
+    width: 100%;
+    height: 35px;
+    border: none;
+    background-color: #dbe2eb;
+    border-radius: 5px;
+}
+
+.conteudo button{    
+    width: 100%;
+    height: 35px;
+    background-color: #6889A6;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/*ao passar o mouse*/
+.conteudo button:hover{   
+    background-color: #2A3F59;
+}
+
+.rodape{
+    background-color: #272F40;
+    color: #ffffff;
+    text-align: center;
+    padding: 15px;
+}
+
+#resposta{
+    text-align: center;
+    margin-top: 20px;
+    font-weight: bold;
+    color: red;
+}
