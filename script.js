@@ -48,51 +48,66 @@ if ("serviceWorker" in navigator) {
 
 
 // ----------------------------
-// INSTALAÇÃO DO PWA
+// INSTALAÇÃO DO PWA (ANDROID & IOS)
 // ----------------------------
 
 let deferredPrompt;
 
+// Seletores dos elementos da interface
+const containerInstalar = document.getElementById("instalar-app");
+const blocoAndroid = document.getElementById("instalar-android");
+const blocoIos = document.getElementById("instalar-ios");
+
+// Detecta se a aplicação já está rodando de forma standalone (instalada)
+const isStandalone = window.navigator.standalone === true || window.matchMedia('(display-mode: standalone)').matches;
+
+// Detecta se o dispositivo é iOS
+const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+
+// Inicializa a exibição para dispositivos iOS que não estão no modo standalone
+if (isIOS && !isStandalone) {
+    containerInstalar.style.display = "block";
+    blocoIos.style.display = "block";
+}
+
+// Evento nativo disparado por navegadores suportados (Chrome/Android/Desktop)
 window.addEventListener("beforeinstallprompt", (e) => {
-
-    console.log("PWA INSTALÁVEL");
-
+    // Impede que o prompt nativo seja exibido imediatamente
     e.preventDefault();
-
+    
+    // Salva o evento para ser disparado posteriormente
     deferredPrompt = e;
-
-    document.getElementById("instalar-app").style.display = "block";
-
+    
+    // Exibe o card de instalação e a seção do Android
+    containerInstalar.style.display = "block";
+    blocoAndroid.style.display = "block";
 });
 
-
+// Ação ao clicar no botão "Instalar Aplicativo"
 document.getElementById("btnInstalar").addEventListener("click", async () => {
-
     if (!deferredPrompt) return;
 
+    // Dispara o prompt nativo do navegador
     deferredPrompt.prompt();
 
+    // Aguarda a resposta de escolha do usuário
     const escolha = await deferredPrompt.userChoice;
 
     if (escolha.outcome === "accepted") {
-
-        console.log("Instalado");
-
+        console.log("Usuário aceitou a instalação do PWA");
+    } else {
+        console.log("Usuário recusou a instalação do PWA");
     }
 
+    // Limpa o prompt acumulado
     deferredPrompt = null;
 
-    document.getElementById("instalar-app").style.display = "none";
-
+    // Oculta a área de instalação
+    containerInstalar.style.display = "none";
 });
 
-
-// ESCONDER APÓS INSTALAÇÃO
-
+// Evento disparado quando o app é instalado com sucesso
 window.addEventListener("appinstalled", () => {
-
-    document.getElementById("instalar-app").style.display = "none";
-
-    console.log("Aplicativo instalado");
-
+    containerInstalar.style.display = "none";
+    console.log("Aplicativo instalado com sucesso!");
 });

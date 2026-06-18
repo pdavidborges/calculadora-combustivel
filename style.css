@@ -96,17 +96,111 @@ body{
     color: red;
 }
 
-#instalar-app{
-    display:none;
-    margin-top:20px;
-    text-align:center;
+/* --- ESTILOS PREMIUM DO INSTALADOR PWA --- */
+.card-instalador {
+    margin-top: 30px;
+    padding: 20px;
+    background: linear-gradient(135deg, #f8fafd 0%, #eef3f8 100%);
+    border: 1px solid #d0deec;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(70, 89, 115, 0.08);
+    text-align: center;
+    animation: fadeIn 0.4s ease-out;
 }
 
-#instalar-app p{
-    margin-bottom:10px;
-    color:#333;
+.card-instalador h3 {
+    font-size: 18px;
+    color: #2A3F59;
+    margin-bottom: 8px;
+    font-weight: 700;
 }
 
-#btnInstalar{
-    background-color:#2A3F59;
+.card-instalador p {
+    font-size: 13px;
+    color: #556273;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.btn-premium {
+    width: 100%;
+    height: 42px;
+    background: linear-gradient(135deg, #6889A6 0%, #465973 100%);
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(70, 89, 115, 0.2);
+    transition: all 0.3s ease;
+}
+
+.btn-premium:hover {
+    background: linear-gradient(135deg, #465973 0%, #2A3F59 100%);
+    box-shadow: 0 6px 15px rgba(42, 63, 89, 0.3);
+    transform: translateY(-1px);
+}
+
+.btn-premium:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 5px rgba(42, 63, 89, 0.2);
+}
+
+/* Passo a passo específico para iOS */
+.instrucoes-ios {
+    text-align: left;
+    margin-top: 15px;
+}
+
+.passo-ios {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    background: #ffffff;
+    padding: 10px 14px;
+    border-radius: 8px;
+    border-left: 4px solid #6889A6;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+}
+
+.passo-ios:last-child {
+    margin-bottom: 0;
+}
+
+.numero-ios {
+    width: 24px;
+    height: 24px;
+    background-color: #6889A6;
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 12px;
+    margin-right: 12px;
+    flex-shrink: 0;
+}
+
+.texto-ios {
+    font-size: 13px;
+    color: #333333;
+    line-height: 1.4;
+}
+
+.icon-ios {
+    font-size: 16px;
+    vertical-align: middle;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

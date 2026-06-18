@@ -7,7 +7,9 @@ const arquivos = [
     "./script.js",
     "./manifest.json",
     "./capa.webp",
-    "./icon.webp"
+    "./icon.webp",
+    "./icon-192.png",
+    "./icon-512.png"
 ];
 
 self.addEventListener("install", event => {
